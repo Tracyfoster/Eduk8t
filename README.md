@@ -1,24 +1,30 @@
-# README
+# EDUK8T API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the backend app that powers EduK8t's learning platform.
+It is built with Rails 6.1.4
 
-Things you may want to cover:
+## Prerequisites
 
-* Ruby version
+This project requires:
 
-* System dependencies
+- Ruby 3.0.2, preferably managed using rbenv
+- PostgreSQL must be installed and accepting connections
 
-* Configuration
 
-* Database creation
+## Getting started
 
-* Database initialization
+### With bin/setup
 
-* How to run the test suite
+Run the `bin/setup` script. This script will:
 
-* Services (job queues, cache servers, search engines, etc.)
+- Check you have the required Ruby version
+- Install gems using Bundler
+- Create, migrate
 
-* Deployment instructions
+### Run it!
 
-* ...
+1. Run `bundle exec rspec` to make sure everything works.
+4. Run `bin/rails server`
+
+## API Documentation
+---Todo
