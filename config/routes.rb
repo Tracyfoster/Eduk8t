@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   root "api/users#index"
 
   namespace :api, defaults: { format: :json } do
-    resources :users
+    resources :users do
+      get :eligible_courses
+      get :my_courses
+      post :assign_course
+    end
+
     resources :authors
     resources :courses
   end

@@ -1,4 +1,9 @@
 FactoryBot.define do
+  factory :user_course do
+    user
+    course
+  end
+
   factory :author do
     name { Faker::Name.name }
     title { "VP Growth and Development" }

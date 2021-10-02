@@ -46,6 +46,9 @@ Metrics/MethodLength:
 RSpec/ExampleLength:
   Max: 12
 
+RSpec/MultipleExpectations:
+  Max: 4
+
 Naming/MemoizedInstanceVariableName:
   EnforcedStyleForLeadingUnderscores: optional
 
