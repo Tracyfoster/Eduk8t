@@ -29,6 +29,13 @@ RSpec.describe "/api/users", type: :request do
       get api_user_url(user), as: :json
       expect(response).to be_successful
     end
+
+    context "when user does not exist" do
+      it "returns an error" do
+        get "/api/users/a", as: :json
+        expect(response).to have_http_status(:not_found)
+      end
+    end
   end
 
   describe "POST /create" do

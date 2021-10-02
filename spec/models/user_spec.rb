@@ -17,6 +17,6 @@ RSpec.describe User, type: :model do
   end
 
   describe "Associations" do
-    it { should have_many(:courses) }
+    it { is_expected.to have_many(:courses) }
   end
 end

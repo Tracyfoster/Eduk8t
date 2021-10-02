@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe UserCourse, type: :model do
   describe "Validations" do
@@ -8,7 +8,7 @@ RSpec.describe UserCourse, type: :model do
   end
 
   describe "Associations" do
-    it { should belong_to(:user) }
-    it { should belong_to(:course) }
+    it { is_expected.to belong_to(:user) }
+    it { is_expected.to belong_to(:course) }
   end
 end

@@ -17,7 +17,7 @@ RSpec.describe Course, type: :model do
   end
 
   describe "Associations" do
-    it { should belong_to(:author) }
-    it { should have_many(:users) }
+    it { is_expected.to belong_to(:author) }
+    it { is_expected.to have_many(:users) }
   end
 end
