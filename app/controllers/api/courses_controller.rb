@@ -45,9 +45,7 @@ class Api::CoursesController < ApplicationController
   end
 
   def course_params
-    params.require(:course).permit(:title,
-                                   :description,
-                                   :expertise,
-                                   :industry)
+    params.require(:course)
+          .permit(:title, :description, :expertise, :industry, :author_id)
   end
 end

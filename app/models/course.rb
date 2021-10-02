@@ -1,4 +1,6 @@
 class Course < ApplicationRecord
+  belongs_to :author
+
   validates_presence_of :title, :expertise, :expertise
 
   enum expertise: {

@@ -1,18 +1,21 @@
 require "rails_helper"
 
 RSpec.describe "/api/courses", type: :request do
+  let(:author) { create(:author) }
   let(:valid_attributes) do
     { title: "Crytocurrency, The Hard Parts",
       description: "Learn deeper truths about cryto",
       expertise: "expert",
-      industry: "Finance" }
+      industry: "Finance",
+      author_id: author.id }
   end
 
   let(:invalid_attributes) do
     { title: nil,
       description: "Insurance Foundations",
       expertise: "beginner",
-      industry: "Insurance" }
+      industry: "Insurance",
+      author_id: author.id }
   end
 
   describe "GET /index" do
