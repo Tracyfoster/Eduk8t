@@ -1,5 +1,5 @@
-class User < ApplicationRecord
-  validates_presence_of :email, :expertise
+class Course < ApplicationRecord
+  validates_presence_of :title, :expertise, :expertise
 
   enum expertise: {
     beginner: "beginner",
