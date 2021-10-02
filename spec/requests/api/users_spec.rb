@@ -44,7 +44,6 @@ RSpec.describe "/api/users", type: :request do
         post api_users_url,
              params: { user: valid_attributes }, as: :json
         expect(response).to have_http_status(:created)
-        expect(response.content_type).to match(a_string_including("application/json"))
       end
     end
 
@@ -60,7 +59,6 @@ RSpec.describe "/api/users", type: :request do
         post api_users_url,
              params: { user: invalid_attributes }, as: :json
         expect(response).to have_http_status(:unprocessable_entity)
-        expect(response.content_type).to eq("application/json; charset=utf-8")
       end
     end
   end
@@ -83,7 +81,6 @@ RSpec.describe "/api/users", type: :request do
         patch api_user_url(user),
               params: { user: new_attributes }, as: :json
         expect(response).to have_http_status(:ok)
-        expect(response.content_type).to match(a_string_including("application/json"))
       end
     end
 
@@ -93,7 +90,6 @@ RSpec.describe "/api/users", type: :request do
         patch api_user_url(user),
               params: { user: invalid_attributes }, as: :json
         expect(response).to have_http_status(:unprocessable_entity)
-        expect(response.content_type).to eq("application/json; charset=utf-8")
       end
     end
   end

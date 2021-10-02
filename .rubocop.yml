@@ -1,6 +1,7 @@
 require:
   - rubocop-performance
   - rubocop-rails
+  - rubocop-rspec
 
 AllCops:
   NewCops: enable
@@ -42,6 +43,8 @@ Metrics/MethodLength:
   Exclude:
     - "db/migrate/*"
     - "spec/**/*"
+RSpec/ExampleLength:
+  Max: 12
 
 Naming/MemoizedInstanceVariableName:
   EnforcedStyleForLeadingUnderscores: optional
