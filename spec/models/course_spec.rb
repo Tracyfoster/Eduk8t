@@ -14,5 +14,6 @@ RSpec.describe Course, type: :model do
 
     it { is_expected.to validate_presence_of(:title) }
     it { is_expected.to validate_presence_of(:expertise) }
+    it { is_expected.to belong_to(:author) }
   end
 end
