@@ -27,4 +27,30 @@ Run the `bin/setup` script. This script will:
 4. Run `bin/rails server`
 
 ## API Documentation
----Todo
+### Users
+User related endpoints
+  * GET /api/users
+  * GET /api/users/:user_id
+  * GET /api/users/:user_id/eligible_courses
+  * GET /api/users/:user_id/my_courses
+  * POST /api/users
+  * POST /api/users/:user_id/assign_course
+  * PATCH /api/users/:user_id
+  * DELETE /api/users/:user_id
+
+### Authors
+Author related endpoints
+  * GET /api/authors
+  * GET /api/authors/:author_id
+  * POST /api/authors
+  * PATCH /api/authors/:author_id
+  * DELETE /api/authors/:author_id
+
+### Courses
+Course related endpoints
+  * GET /api/courses
+  * GET /api/courses/:course_id
+  * POST /api/courses
+  * PATCH /api/courses/:course_id
+  * DELETE /api/courses/:course_id
+

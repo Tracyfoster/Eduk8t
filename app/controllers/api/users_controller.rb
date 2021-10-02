@@ -14,13 +14,13 @@ class Api::UsersController < ApplicationController
     render json: @user
   end
 
-  # GET /api/users/:id/eligible_courses
+  # GET /api/users/:user_id/eligible_courses
   def eligible_courses
     @courses = @user.eligible_courses
     render json: @courses
   end
 
-  # GET /api/users/:id/my_courses
+  # GET /api/users/:user_id/my_courses
   def my_courses
     @courses = @user.courses
 
@@ -38,7 +38,7 @@ class Api::UsersController < ApplicationController
     end
   end
 
-  # POST /api/users/:id/assign_course
+  # POST /api/users/:user_id/assign_course
   def assign_course
     course = Course.find(params[:course_id])
     if course.expertise == @user.expertise
