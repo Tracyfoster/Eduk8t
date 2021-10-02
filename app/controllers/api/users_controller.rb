@@ -1,5 +1,6 @@
 class Api::UsersController < ApplicationController
-  before_action :set_user, only: %i[show update destroy]
+  before_action :set_user, only: %i[show update destroy eligible_courses
+                                    assign_course my_courses]
 
   # GET /api/users
   def index
@@ -13,6 +14,19 @@ class Api::UsersController < ApplicationController
     render json: @user
   end
 
+  # GET /api/users/:id/eligible_courses
+  def eligible_courses
+    @courses = @user.eligible_courses
+    render json: @courses
+  end
+
+  # GET /api/users/:id/my_courses
+  def my_courses
+    @courses = @user.courses
+
+    render json: @courses
+  end
+
   # POST /api/users
   def create
     @user = User.new(user_params)
@@ -21,6 +35,18 @@ class Api::UsersController < ApplicationController
       render json: @user, status: :created
     else
       render json: @user.errors, status: :unprocessable_entity
+    end
+  end
+
+  # POST /api/users/:id/assign_course
+  def assign_course
+    course = Course.find(params[:course_id])
+    if course.expertise == @user.expertise
+      UserCourse.create!({ user: @user, course: course })
+      head :ok
+    else
+      render json: { message: "Course expertise cannot be assigned to user" },
+             status: :bad_request
     end
   end
 
@@ -41,7 +67,11 @@ class Api::UsersController < ApplicationController
   private
 
   def set_user
-    @user = User.find(params[:id])
+    @user = if params[:id]
+              User.find(params[:id])
+            elsif params[:user_id]
+              User.find(params[:user_id])
+            end
   end
 
   def user_params

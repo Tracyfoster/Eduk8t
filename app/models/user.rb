@@ -8,4 +8,8 @@ class User < ApplicationRecord
     intermediate: "intermediate",
     expert: "expert"
   }
+
+  def eligible_courses
+    Course.where(expertise: expertise)
+  end
 end
