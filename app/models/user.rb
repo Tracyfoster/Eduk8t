@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   enum expertise: {
     beginner: "beginner",
-    advanced: "advanced",
+    intermediate: "intermediate",
     expert: "expert"
   }
 end

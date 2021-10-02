@@ -5,14 +5,14 @@ RSpec.describe "/api/users", type: :request do
     { firstname: "Tabley",
       lastname: "Jones",
       email: "tableyjones@email.com",
-      expertise: "advanced" }
+      expertise: "expert" }
   end
 
   let(:invalid_attributes) do
     { firstname: "Tabley",
       lastname: "Jones",
       email: nil,
-      expertise: "advanced" }
+      expertise: "expert" }
   end
 
   describe "GET /index" do
