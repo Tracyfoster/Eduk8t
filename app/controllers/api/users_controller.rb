@@ -24,7 +24,7 @@ class Api::UsersController < ApplicationController
     end
   end
 
-  # PUT /api/users/1
+  # PATCH /api/users/1
   def update
     if @user.update(user_params)
       render json: @user

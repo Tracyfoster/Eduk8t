@@ -24,7 +24,7 @@ class Api::CoursesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /api/courses/1
+  # PATCH /api/courses/1
   def update
     if @course.update(course_params)
       render json: @course
