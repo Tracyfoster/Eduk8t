@@ -43,7 +43,7 @@ class Api::UsersController < ApplicationController
     course = Course.find(params[:course_id])
     if course.expertise == @user.expertise
       UserCourse.create!({ user: @user, course: course })
-      head :ok
+      render json: { message: "Course successfully assigned to user" },
     else
       render json: { message: "Course expertise cannot be assigned to user" },
              status: :bad_request

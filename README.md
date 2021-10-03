@@ -27,6 +27,7 @@ Run the `bin/setup` script. This script will:
 4. Run `bin/rails server`
 
 ## API Documentation
+Access with [Postman](https://www.getpostman.com/collections/cdc963a1bd643dc73bd2)
 ### Users
 User related endpoints
   * GET /api/users
